@@ -6,7 +6,7 @@
 ``` git clone https://github.com/Dizro/Telegram-Video-Circle-Bot.git ```
 
 2. Перейдите в директорию проекта:
-``` cd telegram-video-circle-bot ```
+``` cd Telegram-Video-Circle-Bot ```
 
 3. Установите необходимые зависимости:
 ``` pip install -r requirements.txt ```
