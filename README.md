@@ -3,7 +3,7 @@
 
 ## Установка
 1. Клонируйте репозиторий:
-``` git clone https://github.com/yourusername/Telegram-Video-Circle-Bot.git ```
+``` git clone https://github.com/Dizro/Telegram-Video-Circle-Bot.git ```
 
 2. Перейдите в директорию проекта:
 ``` cd telegram-video-circle-bot ```
