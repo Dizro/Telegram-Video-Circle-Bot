@@ -1,6 +1,8 @@
 # Telegram-Video-Circle-Bot
 Этот проект представляет собой открытый код бота для Telegram, который преобразует видео, отправленное пользователем, в видеокружок (круглое видео).
 
+![alt text](https://leonardo.osnova.io/7506e765-ca5c-53b2-abfa-d1f27f0e4102/-/preview/2100/-/format/webp/)
+
 ## Установка
 1. Клонируйте репозиторий:
 ``` git clone https://github.com/Dizro/Telegram-Video-Circle-Bot.git ```
