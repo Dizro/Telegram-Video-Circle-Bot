@@ -1,19 +1,18 @@
 import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram import ForceReply, Update
+from telegram.ext import Application, Updater, CommandHandler, MessageHandler, filters
 from config import API_TOKEN
 from handlers import start, process_video
 
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    updater = Updater(API_TOKEN, use_context=True)
-    dp = updater.dispatcher
+    dp = Application.builder().token(API_TOKEN).build()
 
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(MessageHandler(Filters.video, process_video))
+    dp.add_handler(MessageHandler(filters.VIDEO, process_video))
 
-    updater.start_polling()
-    updater.idle()
+    dp.run_polling(allowed_updates=Update.ALL_TYPES, stop_signals=None)
 
 if __name__ == "__main__":
     main()
