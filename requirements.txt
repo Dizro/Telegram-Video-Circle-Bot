@@ -1,2 +1,3 @@
 moviepy
 python-telegram-bot
+opencv-python
