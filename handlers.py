@@ -2,14 +2,14 @@ from moviepy.editor import *
 from telegram import Update, InputMediaVideo
 from telegram.ext import CallbackContext
 
-def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Отправьте мне видео, и я преобразую его в видеокружок.")
+async def start(update: Update, context: CallbackContext):
+    await update.message.reply_text("Отправьте мне видео, и я преобразую его в видеокружок.")
 
-def process_video(update: Update, context: CallbackContext):
-    video_file = context.bot.getFile(update.message.video.file_id)
-    video_file.download("input_video.mp4")
+async def process_video(update: Update, context: CallbackContext):
+    video_file = await context.bot.getFile(update.message.video.file_id)
+    await video_file.download("input_video.mp4")
 
-    # Преобразование видео в видеокружок
+    # Prеобразование видео в видеокружок
     input_video = VideoFileClip("input_video.mp4")
     w, h = input_video.size
     circle_size = 360
@@ -28,4 +28,4 @@ def process_video(update: Update, context: CallbackContext):
 
     # Отправка видеокружка в чат
     with open("output_video.mp4", "rb") as video:
-        context.bot.send_video_note(chat_id=update.message.chat_id, video_note=video, duration=int(output_video.duration), length=circle_size)
+        await context.bot.send_video_note(chat_id=update.message.chat_id, video_note=video, duration=int(output_video.duration), length=circle_size)
