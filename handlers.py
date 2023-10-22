@@ -24,7 +24,7 @@ async def process_video(update: Update, context: CallbackContext):
         
     resized_video = input_video.resize((new_w, new_h))
     output_video = resized_video.crop(x_center=resized_video.w/2, y_center=resized_video.h/2, width=circle_size, height=circle_size)
-    output_video.write_videofile("output_video.mp4", codec="libx264", audio_codec="aac")
+    output_video.write_videofile("output_video.mp4", codec="libx264", audio_codec="aac", bitrate="5M")
 
     # Отправка видеокружка в чат
     with open("output_video.mp4", "rb") as video:
