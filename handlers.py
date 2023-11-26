@@ -7,7 +7,7 @@ async def start(update: Update, context: CallbackContext):
 
 async def process_video(update: Update, context: CallbackContext):
     video_file = await context.bot.getFile(update.message.video.file_id)
-    await video_file.download("input_video.mp4")
+    await video_file.download_memory("input_video.mp4")
 
     # Prеобразование видео в видеокружок
     input_video = VideoFileClip("input_video.mp4")
